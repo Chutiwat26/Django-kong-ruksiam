@@ -15,7 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+#from app_name import views
+from blogs import views
 
 urlpatterns = [
+    #path(path,callback_function)
     path('admin/', admin.site.urls),
+    #เปลี่ยนไปแสดงผลโดยการ render ไฟล์ html แทน
+    #path('',views.hello)
+    path('',views.show_index),
+    path('page1',views.page1)
 ]
