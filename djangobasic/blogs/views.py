@@ -17,3 +17,15 @@ def show_index(request):
 
 def page1(request):
     return render(request,'page1.html')
+
+def createForm(request):
+    return render(request, 'form.html')
+
+def addBlog(request):
+    #รับข้อมูลจาก tag field ในไฟล์ html โดยอ้างอิงจากชื่อของ tag field นั้นๆ
+    #name = request.GET['name']
+    #description = request.GET['description']
+    name = request.POST['name']
+    description = request.POST['description']
+    return render(request, 'result.html',{'name':name,
+    'description':description})

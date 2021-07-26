@@ -24,5 +24,7 @@ urlpatterns = [
     #เปลี่ยนไปแสดงผลโดยการ render ไฟล์ html แทน
     #path('',views.hello)
     path('',views.show_index),
-    path('page1',views.page1)
+    path('page1',views.page1),
+    path('createForm',views.createForm),
+    path('addForm',views.addBlog)
 ]

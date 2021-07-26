@@ -29,7 +29,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+#เมื่อมีการสร้าง app ขึ้นมาต้องทำการติดตั้ง app ใน installed_apps ด้วย
+#เมื่อมีการเพิ่ม app ให้รันคำสั่ง python manage.py makemigrations ด้วย เพื่อทำการตรวจสอบการสร้างตารางว่าถูกต้องหรือไม่ หากถูกต้องแล้วให้รัน python manage.py migrate เพื่อตารางในฐานข้อมูล
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # ติดตั้ง app ที่ชื่อว่า blogs
+    'blogs',
 ]
 
 MIDDLEWARE = [
@@ -76,8 +79,12 @@ WSGI_APPLICATION = 'djangobasic.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'djangodb',
+        'USER': 'root',
+        'PASSWORD':'un873833637',
+        'HOST':'localhost',
+        'PORT':'3306'
     }
 }
 
