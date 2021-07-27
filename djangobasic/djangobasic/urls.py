@@ -26,5 +26,8 @@ urlpatterns = [
     path('',views.show_index),
     path('page1',views.page1),
     path('createForm',views.createForm),
-    path('addForm',views.addBlog)
+    path('addForm',views.addForm),
+    path('loginform',views.loginform),
+    path('login',views.login),
+    path('logout',views.logOut)
 ]

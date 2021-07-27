@@ -2,19 +2,20 @@
 {% extends 'layout.html' %}
     {% block content %}
     <!--เมื่อมีการสร้าง template ขึ้นมาใหม่ต้องเข้าไปตั้งค่าใน setting ด้วย-->
+    <!--
     <h2>Home page</h2>
     <p>Chutiwat Tanapibalwongsa</p>
-    <p>รวมของดีของเด็ดจากเกษตรกร พ่อค้าแม่ค้าทั่วไทย</p>
+    <p>รวมของดีของเด็ดจากเกษตรกร พ่อค้าแม่ค้าทั่วไทย</p>-->
 
     <!--{{name}} คือการรับข้อมูลจากการ render ใน views-->
-    
+    <!--
     <h2>ชื่อบทความ : {{ name }}</h2>
     <h3>ผู้แต่ง : {{ author }}</h3>
     
-    <h2>ป้ายกำกับ</h2>
+    <h2>ป้ายกำกับ</h2>-->
     
     <!--การทำพวก statement จะต้องใช้ {%-->
-    
+    <!--
     {% for tag in tags %}
         <li>{{tag}}</li>
     {% endfor %}
@@ -23,6 +24,25 @@
         <p>Good product</p>
     {% else %}
         <p>No good product</p>
-    {% endif %}
-    
+    {% endif %}-->
+        <h2 align="center">แสดงข้อมูลบทความ</h2>
+        <!-- On tables -->
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">รหัสบทความ</th>
+                <th scope="col">บทความ</th>
+                <th scope="col">รายละเอียด</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+              <tr>
+                <th scope="row">{{post.id}}</th>
+                <td>{{post.name}}</td>
+                <td>{{post.description}}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
     {% endblock %}
